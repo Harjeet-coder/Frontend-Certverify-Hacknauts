@@ -1,0 +1,88 @@
+.faculty-verify {
+  padding-top: 120px;
+  min-height: 100vh;
+  background: hsl(var(--background));
+}
+
+.verify-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.verify-header {
+  margin-bottom: 2rem;
+}
+
+.verify-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.verify-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+}
+
+.verify-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.verify-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+}
+
+.verify-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.verify-table thead {
+  background: hsl(var(--secondary));
+}
+
+.verify-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.verify-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+}
+
+.verify-table tbody tr:hover {
+  background: hsl(var(--secondary) / 0.5);
+}
+
+.verify-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .verify-table {
+    font-size: 0.75rem;
+  }
+  
+  .verify-table th,
+  .verify-table td {
+    padding: 0.5rem;
+  }
+}
