@@ -1,5 +1,5 @@
 import { useApp } from '@/providers/AppProvider';
-import { GraduationCap, LogIn, UserPlus, User, Settings, LogOut, LayoutDashboard, FileCheck, BarChart3, UserCircle, Upload } from 'lucide-react';
+import { GraduationCap, LogIn, User, LogOut, LayoutDashboard, FileCheck, BarChart3, UserCircle, Upload, UserPlus } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { NotificationBanner } from '@/components/shared/NotificationBanner';
 import { useState } from 'react';
@@ -15,17 +15,20 @@ export const Navbar = () => {
       case 'student':
         return [
           { icon: LayoutDashboard, label: 'Dashboard', path: '/student/dashboard' },
-          { icon: Upload, label: 'Upload', path: '/student/dashboard' },
           { icon: UserCircle, label: 'Portfolio', path: '/student/portfolio' },
         ];
+
       case 'faculty':
         return [
           { icon: FileCheck, label: 'Verify Certificates', path: '/faculty/verify' },
         ];
+
       case 'admin':
         return [
           { icon: BarChart3, label: 'Analytics', path: '/admin/analytics' },
+          { icon: UserPlus, label: 'Add User', path: '/admin/add-user' },
         ];
+
       default:
         return [];
     }
@@ -35,25 +38,28 @@ export const Navbar = () => {
 
   return (
     <>
-      <NotificationBanner />
+      <NotificationBanner 
+        message="" 
+        visible={false} 
+        onClose={() => {}} 
+      />
+
       <nav className="navbar">
         <div className="navbar-container">
+
+          {/* ------------------- HEADER ------------------- */}
           <div className="navbar-header">
             <Link to="/" className="navbar-logo">
               <GraduationCap className="navbar-logo-icon" />
               <span>EduVault</span>
             </Link>
-            
+
             <div className="navbar-actions">
               {!isAuthenticated ? (
                 <>
                   <Link to="/login" className="navbar-profile-button">
                     <LogIn style={{ width: '16px', height: '16px' }} />
                     Login
-                  </Link>
-                  <Link to="/login" className="navbar-profile-button" style={{ background: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}>
-                    <UserPlus style={{ width: '16px', height: '16px' }} />
-                    Signup
                   </Link>
                 </>
               ) : (
@@ -67,27 +73,42 @@ export const Navbar = () => {
                     </div>
                     <span>{user?.name}</span>
                   </button>
+
+                  {/* -------------- DROPDOWN ---------------- */}
                   {isProfileOpen && (
                     <div className="navbar-profile-dropdown">
-                      <button onClick={() => setIsProfileOpen(false)}>
+
+                      {/* ⭐ VIEW PROFILE */}
+                      <Link 
+                        to="/profile"
+                        className="dropdown-item"
+                        onClick={() => setIsProfileOpen(false)}
+                      >
                         <User style={{ width: '16px', height: '16px' }} />
                         View Profile
-                      </button>
-                      <button onClick={() => setIsProfileOpen(false)}>
-                        <Settings style={{ width: '16px', height: '16px' }} />
-                        Edit Profile
-                      </button>
-                      <button onClick={() => { logout(); setIsProfileOpen(false); }}>
+                      </Link>
+
+                      {/* ⭐ LOGOUT */}
+                      <button
+                        onClick={() => {
+                          logout();
+                          setIsProfileOpen(false);
+                          window.location.href = "/"; // redirect after logout
+                        }}
+                        className="dropdown-item"
+                      >
                         <LogOut style={{ width: '16px', height: '16px' }} />
                         Logout
                       </button>
+
                     </div>
                   )}
                 </div>
               )}
             </div>
           </div>
-          
+
+          {/* ------------------- NAVIGATION LINKS ------------------- */}
           {isAuthenticated && navItems.length > 0 && (
             <div className="navbar-nav">
               <div className="navbar-nav-container">
@@ -95,6 +116,7 @@ export const Navbar = () => {
                   {navItems.map((item) => {
                     const Icon = item.icon;
                     const isActive = location.pathname === item.path;
+
                     return (
                       <li key={item.path} className="navbar-nav-item">
                         <Link 
@@ -111,6 +133,7 @@ export const Navbar = () => {
               </div>
             </div>
           )}
+
         </div>
       </nav>
     </>

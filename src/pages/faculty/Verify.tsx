@@ -7,6 +7,9 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import './Verify.css';
 
+const SF: any = SearchFilter as any;
+const CPM: any = CertificatePreviewModal as any;
+
 const FacultyVerify = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -43,9 +46,7 @@ const FacultyVerify = () => {
           </div>
 
           <div className="verify-card">
-            <h2 className="verify-card-title">Pending Certificates</h2>
-            
-            <SearchFilter
+            <SF
               searchQuery={searchQuery}
               statusFilter={statusFilter}
               onSearchChange={setSearchQuery}
@@ -69,13 +70,13 @@ const FacultyVerify = () => {
                     <td>{cert.date}</td>
                     <td>
                       <div className="verify-actions">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => setSelectedCertificate(cert.file)}
-                        >
-                          View
-                        </Button>
+                       <button 
+  className="view-btn"
+  onClick={() => setSelectedCertificate(cert.file)}
+>
+  View
+</button>
+
                         <Button 
                           size="sm"
                           className="bg-success hover:bg-success/90"
@@ -99,12 +100,12 @@ const FacultyVerify = () => {
           </div>
         </div>
       </div>
-      <HelpPopup />
-      <CertificatePreviewModal
-        isOpen={!!selectedCertificate}
+      <CPM
+        open={!!selectedCertificate}
         onClose={() => setSelectedCertificate(null)}
         certificateUrl={selectedCertificate || ''}
       />
+      
     </>
   );
 };

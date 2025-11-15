@@ -1,109 +1,136 @@
+/* MAIN PAGE */
 .portfolio-page {
-  padding-top: 120px;
+  padding-top: 40px;
   min-height: 100vh;
-  background: hsl(var(--background));
+  background: #0A1A3A;
+  color: white;
 }
 
+/* CONTAINER */
 .portfolio-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 }
 
+/* HEADER CARD */
 .portfolio-header {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.14);
 }
 
+/* TEXT */
 .portfolio-info h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: hsl(var(--foreground));
+  color: white;
   margin-bottom: 0.5rem;
 }
 
 .portfolio-info p {
-  color: hsl(var(--muted-foreground));
+  color: #d1d5db; /* gray-300 */
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 
+/* STAT CARDS */
 .portfolio-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
   margin-top: 1.5rem;
 }
 
 .portfolio-stat-card {
-  background: hsl(var(--secondary));
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
   text-align: center;
+  padding: 1.8rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-stat-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 
 .portfolio-stat-value {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  color: hsl(var(--primary));
+  color: #f2fa02; /* blue-400 */
+  margin-bottom: 0.5rem;
+}
+.portfolio-stat-value-1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fa0202; /* blue-400 */
   margin-bottom: 0.5rem;
 }
 
 .portfolio-stat-label {
-  color: hsl(var(--muted-foreground));
+  color: #cbd5e1; /* gray-300 */
   font-size: 0.875rem;
 }
 
+/* CERTIFICATE SECTION CARD */
 .portfolio-certificates {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.14);
 }
 
 .portfolio-certificates h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: white;
   margin-bottom: 1.5rem;
 }
 
+/* CARD GRID */
 .certificate-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .certificate-item {
-  background: hsl(var(--secondary));
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.5rem;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
   padding: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
 }
 
 .certificate-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.16);
 }
 
 .certificate-item h3 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: rgb(0, 255, 26);
   margin-bottom: 0.5rem;
 }
 
 .certificate-item p {
-  color: hsl(var(--muted-foreground));
+  color: #cbd5e1;
   font-size: 0.875rem;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .portfolio-stats {
     grid-template-columns: 1fr;

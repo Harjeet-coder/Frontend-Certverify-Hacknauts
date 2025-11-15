@@ -1,0 +1,130 @@
+.profile-page {
+  padding-top: 120px;
+  min-height: 100vh;
+  background: #0A1A3A;
+  color: white;
+}
+
+.profile-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ----------- HEADER ----------- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #4dabff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.profile-info-text h1 {
+  margin: 0;
+}
+
+.profile-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-role {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-top: 0.3rem;
+}
+
+/* ----------- CARD ----------- */
+.profile-card {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+}
+
+.profile-section-title {
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ----------- GRID ----------- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.profile-item {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+}
+
+.profile-label {
+  font-size: 0.85rem;
+  color: #cdd6e2;
+}
+
+.profile-value {
+  margin-top: 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* ----------- MOBILE ----------- */
+@media (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Vertical column layout */
+.profile-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Each row */
+.profile-row {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+  padding: 1.1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: 0.25s ease;
+}
+
+.profile-row:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Label and value */
+.profile-label {
+  font-size: 0.9rem;
+  color: #cdd6e2;
+  margin-bottom: 0.35rem;
+}
+
+.profile-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}

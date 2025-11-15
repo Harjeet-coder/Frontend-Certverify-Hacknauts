@@ -1,117 +1,55 @@
 .student-dashboard {
-  padding-top: 120px;
+  padding-top: 40px;
   min-height: 100vh;
-  background: hsl(var(--background));
+  background: #0A1A3A;
+  color: white;
 }
 
 .dashboard-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 }
 
-.dashboard-header {
-  margin-bottom: 2rem;
-}
-
-.dashboard-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.5rem;
-}
-
-.dashboard-description {
-  color: hsl(var(--muted-foreground));
-  font-size: 1rem;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
+/* Glossy Card Style */
 .dashboard-section {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.14);
+  transition: all 0.3s ease;
+}
+
+.dashboard-section:hover {
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.20);
 }
 
 .dashboard-section-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+/* Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .dashboard-full-width {
   grid-column: 1 / -1;
 }
 
-.certificates-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.certificates-table thead {
-  background: hsl(var(--secondary));
-}
-
-.certificates-table th {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
-  border-bottom: 1px solid hsl(var(--border));
-}
-
-.certificates-table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid hsl(var(--border));
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
-}
-
-.certificates-table tbody tr:hover {
-  background: hsl(var(--secondary) / 0.5);
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.status-verified {
-  background: hsl(var(--success) / 0.1);
-  color: hsl(var(--success));
-}
-
-.status-pending {
-  background: hsl(var(--warning) / 0.1);
-  color: hsl(var(--warning));
-}
-
-.status-rejected {
-  background: hsl(var(--destructive) / 0.1);
-  color: hsl(var(--destructive));
-}
-
+/* Portfolio Stats */
 .portfolio-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -119,33 +57,68 @@
 .portfolio-stat {
   text-align: center;
   padding: 1rem;
-  background: hsl(var(--secondary));
+  background: rgba(255,255,255,0.08);
   border-radius: 0.5rem;
 }
 
 .portfolio-stat-value {
   font-size: 2rem;
-  font-weight: 700;
-  color: hsl(var(--primary));
-  margin-bottom: 0.25rem;
+  font-weight: bold;
+  color: #4fa3ff;
 }
 
 .portfolio-stat-label {
-  font-size: 0.875rem;
-  color: hsl(var(--muted-foreground));
+  font-size: 0.9rem;
+  color: #cdd6e2;
 }
 
-@media (max-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .certificates-table {
-    font-size: 0.75rem;
-  }
-  
-  .certificates-table th,
-  .certificates-table td {
-    padding: 0.5rem;
-  }
+/* Table */
+.certificates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  color: white;
+}
+
+.certificates-table thead {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.certificates-table th {
+  padding: 0.8rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.certificates-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Hover */
+.certificates-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-verified {
+  background: rgba(0, 200, 120, 0.15);
+  color: #00d68f;
+}
+
+.status-pending {
+  background: rgba(255, 200, 0, 0.15);
+  color: #ffd654;
+}
+
+.status-rejected {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff7b7b;
 }

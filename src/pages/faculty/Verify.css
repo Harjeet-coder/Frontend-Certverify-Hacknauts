@@ -1,45 +1,74 @@
+/* ===========================
+   FACULTY PAGE LAYOUT
+=========================== */
+
 .faculty-verify {
-  padding-top: 120px;
+  padding-top: 40px; /* for merged navbar */
   min-height: 100vh;
-  background: hsl(var(--background));
+
+  background: #0A1A3A; /* deep premium navy */
+  color: white;
 }
 
+/* Container */
 .verify-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
+/* ===========================
+   PAGE HEADER
+=========================== */
+
 .verify-header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .verify-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
 }
 
 .verify-description {
-  color: hsl(var(--muted-foreground));
+  color: #cbd5e1;
   font-size: 1rem;
+  margin-top: 0.25rem;
 }
+
+/* ===========================
+   CARD WRAPPER
+=========================== */
 
 .verify-card {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  background: rgba(255, 255, 255, 0.08); /* glass */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+
+  border-radius: 1rem;
+  padding: 2rem;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
 }
 
+.verify-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.18);
+}
+
+/* Title inside card */
 .verify-card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: white;
   margin-bottom: 1.5rem;
 }
+
+/* ===========================
+   TABLE STYLING
+=========================== */
 
 .verify-table {
   width: 100%;
@@ -47,42 +76,103 @@
   margin-top: 1rem;
 }
 
+/* Table header */
 .verify-table thead {
-  background: hsl(var(--secondary));
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
 }
 
 .verify-table th {
-  padding: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
   text-align: left;
   font-weight: 600;
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
-  border-bottom: 1px solid hsl(var(--border));
+  color: #e2e8f0;
+  font-size: 0.9rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+/* Table rows */
 .verify-table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid hsl(var(--border));
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+  color: #f1f5f9;
+  font-size: 0.9rem;
 }
 
+/* Hover effect */
 .verify-table tbody tr:hover {
-  background: hsl(var(--secondary) / 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
 }
+
+/* ===========================
+   ACTION BUTTONS COLUMN
+=========================== */
 
 .verify-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
+
+.verify-actions button {
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+
+  transition: 0.25s;
+}
+/* VIEW BUTTON — YELLOW */
+.verify-actions .view-btn {
+  background: #facc15;       /* yellow-400 */
+  color: black;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.5rem;
+  transition: 0.25s ease;
+}
+
+.verify-actions .view-btn:hover {
+  background: #eab308;       /* yellow-500 */
+}
+
+/* Approve button */
+.verify-actions .approve-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.verify-actions .approve-btn:hover {
+  background: #16a34a;
+}
+
+/* Reject button */
+.verify-actions .reject-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.verify-actions .reject-btn:hover {
+  background: #dc2626;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
 
 @media (max-width: 768px) {
   .verify-table {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
-  
+
   .verify-table th,
   .verify-table td {
-    padding: 0.5rem;
+    padding: 0.55rem 0.6rem;
+  }
+
+  .verify-card {
+    padding: 1.2rem;
   }
 }
